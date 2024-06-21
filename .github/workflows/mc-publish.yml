@@ -3,7 +3,7 @@ name: Publish on GitHub, CurseForge & Modrinth
 on: [ workflow_dispatch ]
 
 env:
-  MINECRAFT_VERSION: 1.20.5
+  MINECRAFT_VERSION: 1.20.4
   JAVA_VERSION: 21
   VERSION: 1.0.3+1.20.5
   RELEASE_NAME: TrueDarknessFork v1.0.3 for Minecraft 1.20.5

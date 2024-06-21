@@ -20,6 +20,7 @@
 
 package grondag.darkness.mixin;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -41,7 +42,7 @@ public class MixinGameRenderer {
 	private LightTexture lightTexture;
 
 	@Inject(method = "renderLevel", at = @At(value = "HEAD"))
-	private void onRenderLevel(float tickDelta, long nanos, CallbackInfo ci) {
+	private void onRenderLevel(float tickDelta, long limitTime, PoseStack poseStack, CallbackInfo ci) {
 		final LightmapAccess lightmap = (LightmapAccess) lightTexture;
 
 		if (lightmap.darkness_isDirty()) {

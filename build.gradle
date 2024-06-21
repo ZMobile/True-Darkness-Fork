@@ -18,6 +18,12 @@ repositories {
 	maven { url "https://api.modrinth.com/maven" }	//Modrinth
 }
 
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
